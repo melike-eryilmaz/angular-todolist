@@ -1,0 +1,18 @@
+<div class="row d-flex justify-content-center mt-5">
+  <h1 class="text-center mb-3">To-Do List</h1>
+  <div class="col-7">
+    <input type="text"  id="name" class="form-control" placeholder="Add Todo" [formControl]="name">
+  </div>
+  <div class="col-3">
+    <button type="submit" class="btn btn-primary" (click)="addTodo()">Add</button>
+  </div>
+  <div class="col-4 mt-3">
+    <ul class="list-group">
+      <li class="list-group-item mb-3" *ngFor="let todo of todos">
+        <input class="form-check-input me-3" type="checkbox" value="" id="firstCheckbox">
+        <label class="form-check-label" for="firstCheckbox">{{todo.name}}</label>
+        <button type="button" class="btn-close" aria-label="Close" (click)="deleteTodo($event,todo)" style="margin-left: 18rem;"></button>
+      </li>
+    </ul>
+  </div>
+</div>
